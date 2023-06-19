@@ -16,11 +16,47 @@
 </head>
 
 <body>
+    <form>
+        <input type="text" name="fname" placeholder="enter your first name">
+        <input type="text" name="lname" placeholder="enter your last name">
+        <input type="submit" value="Save" onclick="saveData(event)">
 
-    
+    </form>
+
+    <ul id="myul">
+        <li></li>
+    </ul>
+
+
 
     <script>
-         // before the closing of body tag
+        // before the closing of body tag
+
+        // global variable
+        let myul = document.getElementById("myul");
+
+        myul.innerHTML = "";
+
+        //1. Functotion Defiantion 
+
+        function saveData(e) { // formal argument
+            e.preventDefault();
+
+
+            // local variable
+            let fn = document.querySelector('input[name="fname"]');
+            let ln = document.querySelector('input[name="lname"]');
+
+            console.log(fn.value);
+            console.log(ln.value);
+
+            myul.innerHTML += '<li>'+fn.value+' '+ln.value+'</li>'
+
+
+
+            // method is nothing but a javascript function
+            console.log("ok")
+        }
 
     </script>
 
